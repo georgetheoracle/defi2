@@ -17,18 +17,18 @@ function Navbar() {
         <div className='container'>
             <h1>De<span className='primary'>FI</span></h1>
             <ul className={click? 'nav-menu active': 'nav-menu'}>
-                <li>
-                    <a href='/'> Home</a>
-                </li>
-                <li>
-                    <a href='/'> Feature</a>
-                </li>
-                <li>
-                    <a href='/'> Earn</a>
-                </li>
-                <li>
-                    <a href='/'> Contact</a>
-                </li>
+                <Link to='/'><li>
+                Home
+                </li></Link>
+                <Link to='/'><li>
+                Feature
+                </li></Link>
+                <Link to='/'><li>
+                Earn
+                </li></Link>
+                <Link to='/'><li>
+                Contact
+                </li></Link>
             </ul>
             <div className='btn-group'>
             <Link to='/login'>
@@ -43,10 +43,6 @@ function Navbar() {
             </div>
         </div>
     </div>
-    <Hero/>
-    <Feature/>
-    <Signup/>
-    <Footer/>
     </>
   )
 }

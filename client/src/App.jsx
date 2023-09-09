@@ -14,7 +14,7 @@ function App() {
     <Route path='/login' element={<Login/>}/>
     <Route path='/signup' element={<Register/>}/>
     </Routes>  
- </BrowserRouter>
+    </BrowserRouter>
  </div>
   );
 }
