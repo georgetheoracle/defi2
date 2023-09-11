@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.css'
-import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero.jsx';
-import Feature from './components/Feature.jsx';
-import Signup from './components/Signup.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './home/Navbar.jsx';
+import Hero from './home/Hero.jsx';
+import Feature from './home/Feature.jsx';
+import Signup from './home/Signup.jsx';
+import Footer from './home/Footer.jsx';
 import { Link } from 'react-router-dom';
 
 function Components() {

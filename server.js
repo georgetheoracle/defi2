@@ -1,19 +1,24 @@
-const express = require('express');
+import express from 'express';
+import { connect } from 'mongoose';
+import userRoute from './routes/userRoute.js'
+import { config } from 'dotenv';
+config();
 const app = express();
-const mongoose = require('mongoose');
-const dotenv= require('dotenv')
-dotenv.config();
+const port = 3000;
 
-mongoose.connect(process.env.MONGO).then(()=>{
+connect(process.env.MONGO).then(()=>{
     console.log('connected to mongodb')
 }).catch((error)=>{
     console.log(error)
-})
+});
 
-
-
-
-const port = process.env.PORT || 5000;
 app.listen(port, ()=>{
     console.log(`Server Listening on Port ${port}`)
 });
+app.get('/', (req, res) => {
+    res.json({
+        message: 'API mounted'
+    })
+});
+app.use(express.json())
+app.use('/api/user', userRoute)
