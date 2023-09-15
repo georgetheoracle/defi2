@@ -10,18 +10,18 @@ function Dashboard() {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     }
-                })
-                console.log(response.data)
+                });
+                console.log(response.data);
             } catch (error) {
                 console.log(error)
-            }
-        }
+            };
+        };
     useEffect(()=>{
         getData();
-    }, [])
+    }, []);
   return (
     <div>Dashboard</div>
   )
-}
+};
 
 export default Dashboard
