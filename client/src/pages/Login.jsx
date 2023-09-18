@@ -5,10 +5,13 @@ import gIcon from '../assets/icons8-google.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import toast from 'react-hot-toast'
+import { useSelector, useDispatch } from 'react-redux'
+import { hideLoading, showLoading } from '../redux/alertSlice'
 
 
 function Login() {
     const [formData, setFormData] = useState({});
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleChange = (event) =>{
         setFormData({...formData, [event.target.id]: event.target.value})
@@ -19,8 +22,10 @@ function Login() {
         event.preventDefault();
 
         try {
+            dispatch(showLoading())
             const response  = await axios.post('/api/user/login', formData);
             const data = await response.data;
+            dispatch(hideLoading())
             if(data.success){
                 toast.success(data.message)
                 toast('redirecting to Home Page');
@@ -30,6 +35,7 @@ function Login() {
                 toast.error(data.message)
             }
         } catch (error) {
+            dispatch(hideLoading());
         toast.error('something went wrong')
         console.log(error)
         }
