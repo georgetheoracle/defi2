@@ -1,10 +1,6 @@
 import React, {useState} from 'react'
 import './Navbar.css'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import Hero from './Hero.jsx'
-import Feature from './Feature.jsx'
-import Signup from './Signup.jsx'
-import Footer from './Footer.jsx'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
@@ -13,7 +9,7 @@ function Navbar() {
 
   return (
     <>
-    <div className='header'>
+    <div className='vheader'>
         <div className='container'>
             <h1>De<span className='primary'>FI</span></h1>
             <ul className={click? 'nav-menu active': 'nav-menu'}>

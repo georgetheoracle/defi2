@@ -9,6 +9,10 @@
     color: var(--primary)
 }
 
+.black{
+    color: #333;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,6 +63,16 @@ p {
     font-size: 1.2rem;
 }
 
+input {
+    padding: 12px 32px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    border-radius: 24px 4px;
+    font-size: 1rem;
+    margin-right: .8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
 .container {
     max-width: 1240px;
     margin: auto;
@@ -80,15 +94,27 @@ p {
 
 }
 
-input {
-    padding: 12px 32px;
-    border: 1px solid var(--primary);
-    background: transparent;
-    border-radius: 24px 4px;
-    font-size: 1rem;
-    margin-right: .8rem;
-    font-family: 'Poppins', sans-serif;
+.spinner-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.70);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    
 }
+
+.spinner-border{
+    width: 5rem;
+    height: 5rem;
+    color: white !important;
+}
+
+
 
 
 @media screen and (max-width:768px) {

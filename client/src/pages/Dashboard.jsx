@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
-
+import Layout from '../components/Layout.jsx';
 
 function Dashboard() {
         const getData = async()=>{
@@ -20,7 +20,9 @@ function Dashboard() {
         getData();
     }, []);
   return (
-    <div>Dashboard</div>
+    <Layout>
+        <h2>content</h2>
+    </Layout>
   )
 };
 
